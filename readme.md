@@ -48,7 +48,7 @@ Each seat contains the party name in its `class` attribute.
 - `seatCount` is a boolean, if `true` the total seat count will be displayed in the chart
 
 For the given `parties` object and `seatCount` enabled, the rendered result should look like this:
-![Example: German Bundestag with seat count enabled](https://rawgit.com/juliuste/parliament-svg/example/seatCount.svg)
+![Example: German Bundestag with seat count enabled](https://rawgit.com/juliuste/parliament-svg/master/example/seatCount.svg)
 
 If you want to convert the virtual DOM tree to HTML/SVG string, use [`virtual-dom-stringify`]:
 
