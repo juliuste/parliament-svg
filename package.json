@@ -1,0 +1,35 @@
+{
+  "name": "parliament-svg",
+  "description": "Generate parliament charts as virtual-dom SVG.",
+  "version": "0.1.0",
+  "keywords": [
+    "parliament",
+    "wiki",
+    "wikipedia",
+    "parlament",
+    "chart",
+    "svg"
+  ],
+  "author": "Julius Tens <mail@juliustens.de>",
+  "homepage": "https://github.com/juliuste/parliament-svg",
+  "repository": "juliuste/parliament-svg",
+  "bugs": "https://github.com/juliuste/parliament-svg/issues",
+  "main": "./index.js",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "round-precision": "^1.0.0",
+    "sainte-lague": "^0.1.2",
+    "virtual-hyperscript-svg": "^2.0.0"
+  },
+  "devDependencies": {
+    "virtual-dom-stringify": "^3.0.1"
+  },
+  "scripts": {
+  },
+  "engine": {
+    "node": ">=4"
+  },
+  "license": "MIT"
+}
