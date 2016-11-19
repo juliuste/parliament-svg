@@ -57,9 +57,7 @@ If you want to convert the virtual DOM tree to HTML/SVG string, use `virtual-dom
 ```js
 const toStr = require('virtual-dom-stringify')
 const svg = toStr(svg)
-``
-
-
+```
 
 ## Contributing
 
