@@ -23,27 +23,26 @@ const coords = (r, b) => ({
 	y: round(r * Math.sin(b/r - pi))
 })
 
-const findA = (m, n, r) => {
-	const x = (pi*n*r)/(m-n)
-	const y = 1+(pi*(n-1)*n/2)/(m-n)
+const calculateSeatDistance = (seatCount, numberOfRings, r) => {
+	const x = (pi*numberOfRings*r)/(seatCount-numberOfRings)
+	const y = 1+(pi*(numberOfRings-1)*numberOfRings/2)/(seatCount-numberOfRings)
 
 	const a = x/y
 	return a
 }
 
-const score = (m, n, r) => Math.abs(findA(m, n, r)*n/r-(5/7))
+const score = (m, n, r) => Math.abs(calculateSeatDistance(m, n, r)*n/r-(5/7))
 
-const findN = (m, r) => {
-	let n = Math.floor(Math.log(m)/Math.log(2)) || 1
-	let a = findA(m, n, r)
-	let distance = score(m, n, r)
-	
+const calculateNumberOfRings = (seatCount, r) => {
+	let n = Math.floor(Math.log(seatCount)/Math.log(2)) || 1
+	let distance = score(seatCount, n, r)
+
 	let direction = 0
-	if(score(m, n+1, r)<distance) direction = 1
-	if(score(m, n-1, r)<distance && n>1) direction = -1
+	if(score(seatCount, n+1, r)<distance) direction = 1
+	if(score(seatCount, n-1, r)<distance && n>1) direction = -1
 
-	while(score(m, n+direction, r)<distance&&n>0){
-		distance = score(m, n+direction, r)
+	while(score(seatCount, n+direction, r)<distance&&n>0){
+		distance = score(seatCount, n+direction, r)
 		n+=direction
 	}
 	return n
@@ -63,23 +62,19 @@ const nextRing = (rings, ringProgress) => {
 
 const generatePoints = (parliament, r0) => {
 
-	// calculate seat count
-	const m = seatSum(parliament)
-	
-	// calculate number of rings
-	const n = findN(m, r0)
-	// calculate seat distance
-	const a0 = findA(m, n, r0)
+	const seatCount = seatSum(parliament)
+	const numberOfRings = calculateNumberOfRings(seatCount, r0)
+	const seatDistance = calculateSeatDistance(seatCount, numberOfRings, r0)
 
 	// calculate ring radii
 	let rings = []
-	for(let i=1; i<=n; i++){
-		rings[i] = r0 - (i-1)*a0
+	for(let i=1; i<=numberOfRings; i++){
+		rings[i] = r0 - (i-1)*seatDistance
 	}
 
 	// calculate seats per ring
 	// todo: float to int
-	rings = sl(rings, m)
+	rings = sl(rings, seatCount)
 
 	const points = []
 	let r, a, point
@@ -87,24 +82,23 @@ const generatePoints = (parliament, r0) => {
 	// build seats
 	// loop rings
 	let ring
-	for(let i=1; i<=n; i++){
+	for(let i=1; i<=numberOfRings; i++){
 		ring = []
 		// calculate ring-specific radius
-		r = r0 - (i-1)*a0
+		r = r0 - (i-1)*seatDistance
 		// calculate ring-specific distance
 		a = (pi*r) / ((rings[i]-1) || 1)
 
 		// loop points
 		for(let j=0; j<=rings[i]-1; j++){
 			point = coords(r, j*a)
-			point.r = 0.4*a0
+			point.r = 0.4*seatDistance
 			ring.push(point)
 		}
 		points.push(ring)
 	}
 
 	// fill seats
-	let initial = true
 	const ringProgress = Array(points.length).fill(0)
 	for(let party in parliament){
 		for(let i=0; i<parliament[party].seats; i++){
