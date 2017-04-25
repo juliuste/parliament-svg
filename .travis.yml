@@ -7,3 +7,15 @@ node_js:
   - '6'
   - '5'
   - '4'
+
+script:
+  - npm run build
+after_script:
+  - ls -lh docs/bundle.*
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
+  local_dir: docs
