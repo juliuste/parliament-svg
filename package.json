@@ -1,7 +1,7 @@
 {
   "name": "parliament-svg",
   "description": "Generate parliament charts as virtual-dom SVG.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "keywords": [
     "parliament",
     "wiki",
@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "round-precision": "^1.0.0",
-    "sainte-lague": "^1.0.0",
+    "sainte-lague": "^2.0.0",
     "virtual-hyperscript-svg": "^2.0.0"
   },
   "devDependencies": {
