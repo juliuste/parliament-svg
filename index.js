@@ -138,6 +138,7 @@ const generate = (parliament, seatCount) => {
 		}, elements.length))
 	}
 	const document = svg('svg', {
+		xmlns: 'http://www.w3.org/2000/svg',
 		viewBox: [-radius-a/2, -radius-a/2, 2*radius+a, radius+a].join(',')
 	}, elements)
 	return document
