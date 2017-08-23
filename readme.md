@@ -59,6 +59,10 @@ const toStr = require('virtual-dom-stringify')
 const svg = toStr(svg)
 ```
 
+## See also
+
+- [wikidata-parliament-svg](https://github.com/k-nut/wikidata-parliament-svg) - "draws parliament graphs based on data from wikidata"
+
 ## Contributing
 
 If you found a bug, want to propose a feature or feel the urge to complain about your life, feel free to visit [the issues page](https://github.com/juliuste/parliament-svg/issues).
