@@ -18,4 +18,5 @@ deploy:
   github_token: $GITHUB_TOKEN
   on:
     branch: master
+    node: 'stable'
   local_dir: docs
