@@ -3,6 +3,7 @@
 Generate parliament charts as **[virtual-dom](https://github.com/Matt-Esch/virtual-dom#virtual-dom) SVG**. Design inspired by the [Wikipedia parliament charts](https://github.com/slashme/parliamentdiagram). For westminster-style parliament charts, see [westminster-svg](https://github.com/juliuste/westminster-svg).
 
 [![npm version](https://img.shields.io/npm/v/parliament-svg.svg)](https://www.npmjs.com/package/parliament-svg)
+[![Build Status](https://travis-ci.org/juliuste/parliament-svg.svg?branch=master)](https://travis-ci.org/juliuste/parliament-svg)
 [![dependency status](https://img.shields.io/david/juliuste/parliament-svg.svg)](https://david-dm.org/juliuste/parliament-svg)
 [![dev dependency status](https://img.shields.io/david/dev/juliuste/parliament-svg.svg)](https://david-dm.org/juliuste/parliament-svg#info=devDependencies)
 [![license](https://img.shields.io/github/license/juliuste/parliament-svg.svg?style=flat)](LICENSE)
