@@ -26,7 +26,7 @@ const callRerender = function() {
 
 data.addEventListener('keydown', function(e) {
 	//8 is the keycode for backspace
-	if (e.keyCode==8) callRerender()
+	if (e.keyCode === 8) callRerender()
 });
 data.addEventListener('keypress', function () {
 	callRerender()
