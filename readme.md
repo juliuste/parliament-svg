@@ -4,6 +4,7 @@ Generate parliament charts as **[virtual-dom](https://github.com/Matt-Esch/virtu
 
 [![npm version](https://img.shields.io/npm/v/parliament-svg.svg)](https://www.npmjs.com/package/parliament-svg)
 [![Build Status](https://travis-ci.org/juliuste/parliament-svg.svg?branch=master)](https://travis-ci.org/juliuste/parliament-svg)
+[![Greenkeeper badge](https://badges.greenkeeper.io/juliuste/parliament-svg.svg)](https://greenkeeper.io/)
 [![dependency status](https://img.shields.io/david/juliuste/parliament-svg.svg)](https://david-dm.org/juliuste/parliament-svg)
 [![dev dependency status](https://img.shields.io/david/dev/juliuste/parliament-svg.svg)](https://david-dm.org/juliuste/parliament-svg#info=devDependencies)
 [![license](https://img.shields.io/github/license/juliuste/parliament-svg.svg?style=flat)](LICENSE)
