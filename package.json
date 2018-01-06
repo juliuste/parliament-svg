@@ -40,7 +40,7 @@
     "minify": "uglifyjs -mc --screw-ie8 -- docs/bundle.js > docs/bundle.min.js",
     "transpile": "babel index.js --presets babel-preset-es2015 --out-dir dist",
     "build": "npm run bundle && npm run minify",
-    "prepublish": "npm run transpile",
+    "prepare": "npm run transpile",
     "test": "tape test/*.js"
   },
   "engine": {
