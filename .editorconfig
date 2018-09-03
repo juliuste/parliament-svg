@@ -11,8 +11,3 @@ insert_final_newline = true
 [**.{js,json}]
 indent_style = tab
 indent_size = 4
-
-# Use spaces in YAML.
-[**.{yml,yaml}]
-indent_style = spaces
-indent_size = 2

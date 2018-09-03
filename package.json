@@ -44,7 +44,7 @@
     "test": "tape test/*.js"
   },
   "engine": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "license": "MIT"
 }
