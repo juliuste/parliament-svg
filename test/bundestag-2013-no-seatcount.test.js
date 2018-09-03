@@ -1,8 +1,9 @@
-const parliamentSVG = require('../index');
-const test = require('tape');
+'use strict'
 
-// "snapshot" of the expected output
-const expected = require('./data/bundestag-2013-no-seatcount');
+const chart = require('..')
+const tape = require('tape')
+
+const expected = require('./data/bundestag-2013-no-seatcount')
 
 const parliament = {
 	"linke": {
@@ -22,14 +23,10 @@ const parliament = {
 		"colour": "#333"
 	}
 }
+const seatCount = false
 
-const seatCount = false;
-
-// generate the virtual-dom SVG
-const vDomSVG = parliamentSVG(parliament, seatCount);
-
-// Compare the two objects
-test('Bundestag federal election results from 2013, seatCount false', (assert) => {
-	assert.deepEqual(vDomSVG, expected, 'Generated virtual dom SVG and expected output are the same');
-	assert.end();
-});
+tape('Bundestag federal election results from 2013, seatCount false', t => {
+	const svg = chart(parliament, seatCount)
+	t.deepEqual(svg, expected, 'Generated virtual dom SVG and expected output are the same')
+	t.end()
+})
