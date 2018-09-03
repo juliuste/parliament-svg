@@ -23,7 +23,7 @@ const parliamentSVG = require('parliament-svg')
 const svg = parliamentSVG(parties, seatCount)
 ```
 
-- `parties` is an object containing seat count and colour for each party
+- **`parties`** is an object containing seat count and colour for each party
 
 ```json
 {
@@ -47,7 +47,7 @@ const svg = parliamentSVG(parties, seatCount)
 ```
 Each seat contains the party name in its `class` attribute.
 
-- `seatCount` is a boolean, if `true` the total seat count will be displayed in the chart
+- **`seatCount`** is a boolean, if `true` the total seat count will be displayed in the chart
 
 For the given `parties` object and `seatCount` enabled, the rendered result should look like this:
 
@@ -68,4 +68,4 @@ const svg = toStr(svg)
 
 ## Contributing
 
-If you found a bug, want to propose a feature or feel the urge to complain about your life, feel free to visit [the issues page](https://github.com/juliuste/parliament-svg/issues).
+If you found a bug or want to propose a feature, feel free to visit [the issues page](https://github.com/juliuste/parliament-svg/issues).
