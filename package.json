@@ -1,25 +1,38 @@
 {
   "name": "parliament-svg",
-  "description": "Generate parliament charts as virtual-dom SVG.",
   "version": "2.1.2",
+  "description": "Generate parliament charts as virtual-dom SVG.",
   "keywords": [
-    "parliament",
-    "wiki",
-    "wikipedia",
-    "parlament",
     "chart",
-    "svg"
+    "parlament",
+    "parliament",
+    "svg",
+    "wiki",
+    "wikipedia"
   ],
-  "author": "Julius Tens <mail@juliustens.eu>",
   "homepage": "https://github.com/juliuste/parliament-svg",
-  "repository": "juliuste/parliament-svg",
   "bugs": "https://github.com/juliuste/parliament-svg/issues",
-  "main": "./dist/index.js",
-  "module": "./index.js",
+  "repository": "juliuste/parliament-svg",
+  "license": "ISC",
+  "author": "Julius Tens <mail@juliustens.eu>",
   "files": [
-    "index.js",
-    "dist"
+    "lib/*",
+    "dist/*"
   ],
+  "main": "./dist/index.js",
+  "module": "./lib/index.js",
+  "scripts": {
+    "build": "npm run bundle && npm run minify",
+    "bundle": "browserify -t [ babelify --presets es2015 ] docs/index.js > docs/bundle.js",
+    "check-deps": "depcheck --ignores='babelify,babel-*'",
+    "fix": "eslint --fix lib test",
+    "lint": "eslint lib test",
+    "minify": "uglifyjs -mc --screw-ie8 -- docs/bundle.js > docs/bundle.min.js",
+    "prepare": "npm run transpile",
+    "prepublishOnly": "npm test",
+    "test": "npm run lint && npm run check-deps && npm run transpile && tape test/*.js",
+    "transpile": "babel lib --presets babel-preset-es2015 --out-dir dist"
+  },
   "dependencies": {
     "round-precision": "^1.0.0",
     "sainte-lague": "^2.0.0",
@@ -30,22 +43,19 @@
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^8.0.0",
     "browserify": "^16.2.2",
+    "depcheck": "^0.6.11",
+    "eslint": "^5.8.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "tape": "^4.9.1",
     "uglify-js": "^3.4.9",
     "virtual-dom": "^2.1.1",
     "virtual-dom-stringify": "^3.0.1"
   },
-  "scripts": {
-    "bundle": "browserify -t [ babelify --presets es2015 ] docs/index.js > docs/bundle.js",
-    "minify": "uglifyjs -mc --screw-ie8 -- docs/bundle.js > docs/bundle.min.js",
-    "transpile": "babel index.js --presets babel-preset-es2015 --out-dir dist",
-    "build": "npm run bundle && npm run minify",
-    "prepare": "npm run transpile",
-    "prepublishOnly": "npm run test",
-    "test": "tape test/*.js"
-  },
-  "engine": {
+  "engines": {
     "node": ">=6"
-  },
-  "license": "ISC"
+  }
 }
