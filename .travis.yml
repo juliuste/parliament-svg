@@ -9,7 +9,7 @@ node_js:
 script:
   - npm run test && npm run build
 after_script:
-  - ls -lh docs/bundle.*
+  - ls -lh docs/bundle
 deploy:
   provider: pages
   skip_cleanup: true

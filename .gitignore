@@ -10,5 +10,4 @@ yarn.lock
 shrinkwrap.yaml
 package-lock.json
 
-docs/bundle.js
-docs/bundle.min.js
+docs/bundle
