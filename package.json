@@ -23,7 +23,7 @@
   "module": "./lib/index.js",
   "scripts": {
     "build": "npm run bundle && npm run minify",
-    "bundle": "browserify -t [ babelify --presets es2015 ] docs/index.js > docs/bundle/index.js",
+    "bundle": "mkdir -p docs/bundle && browserify -t [ babelify --presets es2015 ] docs/index.js > docs/bundle/index.js",
     "check-deps": "depcheck --ignores='babelify,babel-*' --ignore-dirs='dist,bundle'",
     "fix": "eslint --fix lib test",
     "lint": "eslint lib test",
