@@ -51,7 +51,7 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
     "tape": "^4.10.2",
-    "uglify-js": "^3.4.9",
+    "uglify-js": "3.7.1",
     "virtual-dom": "^2.1.1",
     "virtual-dom-stringify": "^3.0.1"
   },
