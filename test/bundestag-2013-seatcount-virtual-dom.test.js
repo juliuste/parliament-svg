@@ -1,10 +1,11 @@
 'use strict'
 
+import hFunction from 'virtual-hyperscript-svg'
 import chart from '../src/index.js'
 import tape from 'tape'
 import { normalize as n } from './util.js'
 
-import expected from './data/bundestag-2013-seatcount.js'
+import expected from './data/bundestag-2013-no-seatcount-virtual-dom.js'
 
 const parliament = {
 	linke: {
@@ -24,10 +25,9 @@ const parliament = {
 		colour: '#333',
 	},
 }
-const seatCount = true
 
-tape('Bundestag federal election results from 2013, seatCount true', t => {
-	const svg = chart(parliament, { seatCount })
+tape('Bundestag federal election results from 2013, seatCount not set (defaults to false), custom h function', t => {
+	const svg = chart(parliament, { hFunction })
 	t.deepEqual(n(svg), n(expected), 'Generated virtual dom SVG and expected output are the same')
 	t.end()
 })

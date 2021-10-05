@@ -24,10 +24,9 @@ const parliament = {
 		colour: '#333',
 	},
 }
-const seatCount = false
 
-tape('Bundestag federal election results from 2013, seatCount false', t => {
-	const svg = chart(parliament, seatCount)
+tape('Bundestag federal election results from 2013, seatCount not set (defaults to false)', t => {
+	const svg = chart(parliament)
 	t.deepEqual(n(svg), n(expected), 'Generated virtual dom SVG and expected output are the same')
 	t.end()
 })

@@ -1,6 +1,6 @@
 'use strict'
 
-import { s as svg } from 'hastscript'
+import { s as hastH } from 'hastscript'
 import roundTo from 'lodash/round.js'
 import sl from 'sainte-lague'
 
@@ -111,7 +111,7 @@ const generatePoints = (parliament, r0) => {
 	return merge(points)
 }
 
-const pointToSVG = (point) => svg('circle', {
+const pointToSVG = hFn => point => hFn('circle', {
 	cx: point.x,
 	cy: point.y,
 	r: point.r,
@@ -119,13 +119,22 @@ const pointToSVG = (point) => svg('circle', {
 	class: point.party,
 })
 
-const generate = (parliament, seatCount) => {
+const defaults = {
+	seatCount: false,
+	hFunction: hastH,
+}
+
+const generate = (parliament, options = {}) => {
+	const { seatCount, hFunction } = Object.assign({}, defaults, options)
+	if (typeof seatCount !== 'boolean') throw new Error('`seatCount` option must be a boolean')
+	if (typeof hFunction !== 'function') throw new Error('`hFunction` option must be a function')
+
 	const radius = 20
 	const points = generatePoints(parliament, radius)
 	const a = points[0].r / 0.4
-	const elements = points.map(pointToSVG)
+	const elements = points.map(pointToSVG(hFunction))
 	if (seatCount) {
-		elements.push(svg('text', {
+		elements.push(hFunction('text', {
 			x: 0,
 			y: 0,
 			'text-anchor': 'middle',
@@ -136,7 +145,7 @@ const generate = (parliament, seatCount) => {
 			class: 'seatNumber',
 		}, elements.length))
 	}
-	const document = svg('svg', {
+	const document = hFunction('svg', {
 		xmlns: 'http://www.w3.org/2000/svg',
 		viewBox: [-radius - a / 2, -radius - a / 2, 2 * radius + a, radius + a].join(','),
 	}, elements)
