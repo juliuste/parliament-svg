@@ -1,6 +1,6 @@
 {
 	"name": "parliament-svg",
-	"version": "2.1.4",
+	"version": "3.0.0",
 	"description": "Generate parliament charts as virtual-dom SVG.",
 	"keywords": [
 		"chart",
