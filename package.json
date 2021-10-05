@@ -41,7 +41,6 @@
 		"eslint-plugin-node": "^11.1.0",
 		"eslint-plugin-promise": "^5.1.0",
 		"hast-to-hyperscript": "^10.0.1",
-		"hast-util-sanitize": "^4.0.0",
 		"hast-util-to-html": "^8.0.2",
 		"tape": "^5.3.1",
 		"virtual-dom": "^2.1.1",
