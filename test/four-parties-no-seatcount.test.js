@@ -2,6 +2,7 @@
 
 const chart = require('..')
 const tape = require('tape')
+const { normalize: n } = require('./util')
 
 const expected = require('./data/four-parties-no-seatcount')
 
@@ -27,6 +28,6 @@ const seatCount = false
 
 tape('Four parties with 1 seat each, seatCount false', t => {
 	const svg = chart(parliament, seatCount)
-	t.deepEqual(svg, expected, 'Generated virtual dom SVG and expected output are the same')
+	t.deepEqual(n(svg), n(expected), 'Generated virtual dom SVG and expected output are the same')
 	t.end()
 })
