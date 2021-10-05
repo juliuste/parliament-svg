@@ -1,6 +1,8 @@
 # parliament-svg
 
-Generate parliament charts as **[_hast_](https://github.com/syntax-tree/hast) virtual DOM SVG**. Design inspired by the [Wikipedia parliament charts](https://github.com/slashme/parliamentdiagram). *Play around with the [__live demo__](https://juliuste.github.io/parliament-svg/)!* For westminster-style parliament charts, see [westminster-svg](https://github.com/juliuste/westminster-svg). If you are using [D3](https://github.com/d3/d3/), you might prefer working with the [d3-parliament](https://github.com/geoffreybr/d3-parliament) module.
+Generate parliament charts as **[_hast_](https://github.com/syntax-tree/hast) virtual DOM SVG\***. Design inspired by the [Wikipedia parliament charts](https://github.com/slashme/parliamentdiagram). *Play around with the [__live demo__](https://juliuste.github.io/parliament-svg/)!* For westminster-style parliament charts, see [westminster-svg](https://github.com/juliuste/westminster-svg). If you are using [D3](https://github.com/d3/d3/), you might prefer working with the [d3-parliament](https://github.com/geoffreybr/d3-parliament) module.
+
+\*Also compatible with other virtual DOM implementations, see the [docs below](#Usage).
 
 [![npm version](https://img.shields.io/npm/v/parliament-svg.svg)](https://www.npmjs.com/package/parliament-svg)
 [![License](https://img.shields.io/github/license/juliuste/parliament-svg.svg?style=flat)](license)
@@ -19,10 +21,12 @@ npm install --save parliament-svg
 ```js
 import parliamentSVG from 'parliament-svg'
 
-const virtualSvg = parliamentSVG(parties, seatCount)
+const virtualSvg = parliamentSVG(parties, [opt])
 ```
 
-- **`seatCount`** is a boolean, if `true` the total seat count will be displayed in the chart
+- **`opt`** can contain the following options:
+  - **`seatCount`** is a boolean, if `true` the total seat count will be displayed in the chart. Defaults to `false`.
+  - **`hFunction`** is a function that will be used to generate the element tree. Defaults to [`hastscript`](https://github.com/syntax-tree/hastscript/)'s `s()` function, custom values need to match that function's signature. You could use [`virtual-hyperscript-svg`](https://github.com/substack/virtual-hyperscript-svg)'s `h()` function here if you prefer working with [`virtual-dom`](https://github.com/Matt-Esch/virtual-dom), for example.
 - **`parties`** is an object containing seat count and colour for each party, e.g.:
 
 ```json
@@ -47,11 +51,11 @@ const virtualSvg = parliamentSVG(parties, seatCount)
 ```
 Each seat contains the party name in its `class` attribute.
 
-For the given `parties` object and `seatCount` enabled, the rendered result should look like this:
+For the given `parties` object and `seatCount` enabled, the rendered result should look as follows:
 
 ![Example: German Bundestag with seat count enabled](https://rawgit.com/juliuste/parliament-svg/main/example/seatCount.svg)
 
-If you want to convert the [_hast_](https://github.com/syntax-tree/hast) virtual DOM tree to an SVG string, use `hast-util-to-html` (don't get confused by the name, it can also stringify SVG):
+If you want to convert the [_hast_](https://github.com/syntax-tree/hast) tree to an SVG string, use `hast-util-to-html` (don't get confused by the name, the library can also stringify SVG):
 
 ```js
 import parliamentSVG from 'parliament-svg'
@@ -61,11 +65,13 @@ const virtualSvg = parliamentSVG(parties, seatCount)
 const svg = toSvg(virtualSvg)
 ```
 
-Check the [`example` directory](example) for further examples.
+Check the [`code example`](example/example.js) as well.
 
-### What if I prefer virtual-dom?
+### What if I prefer virtual-dom (or anything else)?
 
-If you prefer [`virtual-dom`](https://github.com/Matt-Esch/virtual-dom) over `hast`, e.g. for diffing or patching, you can use [`hast-to-hyperscript`](https://github.com/syntax-tree/hast-to-hyperscript).
+If you prefer [`virtual-dom`](https://github.com/Matt-Esch/virtual-dom) over `hast`, e.g. for diffing or patching, you can either:
+- use [`hast-to-hyperscript`](https://github.com/syntax-tree/hast-to-hyperscript) to transform the tree after it was generated _or_
+- use the [`hFunction`](#Usage) parameter documented above with a virtual-dom `h()` function of your choice
 
 ## See also
 
