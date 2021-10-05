@@ -25,8 +25,8 @@
 		"bundle": "mkdir -p docs/bundle && browserify docs/index.js > docs/bundle/index.js",
 		"check-deps": "depcheck --ignore-dirs='bundle'",
 		"fix": "npm run lint -- --fix",
-		"lint": "eslint src test example",
-		"minify": "uglifyjs -mc --screw-ie8 -- docs/bundle/index.js > docs/bundle/index.min.js",
+		"lint": "eslint src test example docs/index.js",
+		"minify": "uglifyjs -mc -- docs/bundle/index.js > docs/bundle/index.min.js",
 		"prepublishOnly": "npm test",
 		"test": "npm run lint && npm run check-deps && tape test/*.js"
 	},
