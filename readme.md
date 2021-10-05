@@ -3,7 +3,7 @@
 Generate parliament charts as **[virtual-dom](https://github.com/Matt-Esch/virtual-dom#virtual-dom) SVG**. Design inspired by the [Wikipedia parliament charts](https://github.com/slashme/parliamentdiagram). *Play around with the [__live demo__](https://juliuste.github.io/parliament-svg/)!* For westminster-style parliament charts, see [westminster-svg](https://github.com/juliuste/westminster-svg). If you are using [D3](https://github.com/d3/d3/), you might prefer working with the [d3-parliament](https://github.com/geoffreybr/d3-parliament) module.
 
 [![npm version](https://img.shields.io/npm/v/parliament-svg.svg)](https://www.npmjs.com/package/parliament-svg)
-[![Build Status](https://travis-ci.org/juliuste/parliament-svg.svg?branch=master)](https://travis-ci.org/juliuste/parliament-svg)
+[![Build Status](https://travis-ci.org/juliuste/parliament-svg.svg?branch=main)](https://travis-ci.org/juliuste/parliament-svg)
 [![Greenkeeper badge](https://badges.greenkeeper.io/juliuste/parliament-svg.svg)](https://greenkeeper.io/)
 [![dependency status](https://img.shields.io/david/juliuste/parliament-svg.svg)](https://david-dm.org/juliuste/parliament-svg)
 [![license](https://img.shields.io/github/license/juliuste/parliament-svg.svg?style=flat)](LICENSE)
@@ -51,7 +51,7 @@ Each seat contains the party name in its `class` attribute.
 
 For the given `parties` object and `seatCount` enabled, the rendered result should look like this:
 
-![Example: German Bundestag with seat count enabled](https://rawgit.com/juliuste/parliament-svg/master/example/seatCount.svg)
+![Example: German Bundestag with seat count enabled](https://rawgit.com/juliuste/parliament-svg/main/example/seatCount.svg)
 
 If you want to convert the virtual DOM tree to HTML/SVG string, use `virtual-dom-stringify`:
 
