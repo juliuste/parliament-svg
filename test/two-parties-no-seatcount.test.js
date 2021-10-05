@@ -6,14 +6,14 @@ const tape = require('tape')
 const expected = require('./data/two-parties-no-seatcount')
 
 const parliament = {
-	'party1': {
-		'seats': 1,
-		'colour': '#000'
+	party1: {
+		seats: 1,
+		colour: '#000',
 	},
-	'party2': {
-		'seats': 1,
-		'colour': '#fff'
-	}
+	party2: {
+		seats: 1,
+		colour: '#fff',
+	},
 }
 const seatCount = false
 

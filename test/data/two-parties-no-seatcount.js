@@ -5,8 +5,8 @@ module.exports = {
 		viewBox: undefined,
 		namespace: undefined,
 		attributes: {
-			viewBox: '-51.41592653589793,-51.41592653589793,102.83185307179586,82.83185307179586'
-		}
+			viewBox: '-51.41592653589793,-51.41592653589793,102.83185307179586,82.83185307179586',
+		},
 	},
 	children: [{
 		tagName: 'circle',
@@ -22,8 +22,8 @@ module.exports = {
 				cy: -0,
 				r: 25.132741228718345,
 				fill: '#000',
-				class: 'party1'
-			}
+				class: 'party1',
+			},
 		},
 		children: [],
 		key: undefined,
@@ -32,7 +32,7 @@ module.exports = {
 		hasWidgets: false,
 		hasThunks: false,
 		hooks: undefined,
-		descendantHooks: false
+		descendantHooks: false,
 	}, {
 		tagName: 'circle',
 		properties: {
@@ -47,8 +47,8 @@ module.exports = {
 				cy: 0,
 				r: 25.132741228718345,
 				fill: '#fff',
-				class: 'party2'
-			}
+				class: 'party2',
+			},
 		},
 		children: [],
 		key: undefined,
@@ -57,7 +57,7 @@ module.exports = {
 		hasWidgets: false,
 		hasThunks: false,
 		hooks: undefined,
-		descendantHooks: false
+		descendantHooks: false,
 	}],
 	key: undefined,
 	namespace: 'http://www.w3.org/2000/svg',
@@ -65,5 +65,5 @@ module.exports = {
 	hasWidgets: false,
 	hasThunks: false,
 	hooks: undefined,
-	descendantHooks: false
+	descendantHooks: false,
 }

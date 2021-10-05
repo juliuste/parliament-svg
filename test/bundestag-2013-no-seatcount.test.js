@@ -6,22 +6,22 @@ const tape = require('tape')
 const expected = require('./data/bundestag-2013-no-seatcount')
 
 const parliament = {
-	'linke': {
-		'seats': 64,
-		'colour': '#a08'
+	linke: {
+		seats: 64,
+		colour: '#a08',
 	},
-	'spd': {
-		'seats': 193,
-		'colour': '#e02'
+	spd: {
+		seats: 193,
+		colour: '#e02',
 	},
-	'gruene': {
-		'seats': 63,
-		'colour': '#0b2'
+	gruene: {
+		seats: 63,
+		colour: '#0b2',
 	},
-	'union': {
-		'seats': 311,
-		'colour': '#333'
-	}
+	union: {
+		seats: 311,
+		colour: '#333',
+	},
 }
 const seatCount = false
 

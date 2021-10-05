@@ -5,8 +5,8 @@ module.exports = {
 		viewBox: undefined,
 		namespace: undefined,
 		attributes: {
-			viewBox: '-30.47197551196598,-30.47197551196598,60.94395102393196,40.94395102393196'
-		}
+			viewBox: '-30.47197551196598,-30.47197551196598,60.94395102393196,40.94395102393196',
+		},
 	},
 	children: [{
 		tagName: 'circle',
@@ -22,8 +22,8 @@ module.exports = {
 				cy: -0,
 				r: 8.377580409572783,
 				fill: '#000',
-				class: 'party1'
-			}
+				class: 'party1',
+			},
 		},
 		children: [],
 		key: undefined,
@@ -32,7 +32,7 @@ module.exports = {
 		hasWidgets: false,
 		hasThunks: false,
 		hooks: undefined,
-		descendantHooks: false
+		descendantHooks: false,
 	}, {
 		tagName: 'circle',
 		properties: {
@@ -47,8 +47,8 @@ module.exports = {
 				cy: -17.3205080757,
 				r: 8.377580409572783,
 				fill: '#fff',
-				class: 'party2'
-			}
+				class: 'party2',
+			},
 		},
 		children: [],
 		key: undefined,
@@ -57,7 +57,7 @@ module.exports = {
 		hasWidgets: false,
 		hasThunks: false,
 		hooks: undefined,
-		descendantHooks: false
+		descendantHooks: false,
 	}, {
 		tagName: 'circle',
 		properties: {
@@ -72,8 +72,8 @@ module.exports = {
 				cy: -17.3205080757,
 				r: 8.377580409572783,
 				fill: '#abc',
-				class: 'party3'
-			}
+				class: 'party3',
+			},
 		},
 		children: [],
 		key: undefined,
@@ -82,7 +82,7 @@ module.exports = {
 		hasWidgets: false,
 		hasThunks: false,
 		hooks: undefined,
-		descendantHooks: false
+		descendantHooks: false,
 	}, {
 		tagName: 'circle',
 		properties: {
@@ -97,8 +97,8 @@ module.exports = {
 				cy: 0,
 				r: 8.377580409572783,
 				fill: '#def',
-				class: 'party4'
-			}
+				class: 'party4',
+			},
 		},
 		children: [],
 		key: undefined,
@@ -107,7 +107,7 @@ module.exports = {
 		hasWidgets: false,
 		hasThunks: false,
 		hooks: undefined,
-		descendantHooks: false
+		descendantHooks: false,
 	}, {
 		tagName: 'text',
 		properties: {
@@ -116,7 +116,7 @@ module.exports = {
 			'text-anchor': undefined,
 			style: {
 				'font-family': 'Helvetica',
-				'font-size': '5px'
+				'font-size': '5px',
 			},
 			class: undefined,
 			namespace: undefined,
@@ -124,11 +124,11 @@ module.exports = {
 				x: 0,
 				y: 0,
 				'text-anchor': 'middle',
-				class: 'seatNumber'
-			}
+				class: 'seatNumber',
+			},
 		},
 		children: [{
-			text: '4'
+			text: '4',
 		}],
 		key: undefined,
 		namespace: 'http://www.w3.org/2000/svg',
@@ -136,7 +136,7 @@ module.exports = {
 		hasWidgets: false,
 		hasThunks: false,
 		hooks: undefined,
-		descendantHooks: false
+		descendantHooks: false,
 	}],
 	key: undefined,
 	namespace: 'http://www.w3.org/2000/svg',
@@ -144,5 +144,5 @@ module.exports = {
 	hasWidgets: false,
 	hasThunks: false,
 	hooks: undefined,
-	descendantHooks: false
+	descendantHooks: false,
 }
