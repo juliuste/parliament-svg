@@ -1,5 +1,7 @@
 'use strict'
 
+import { toH } from 'hast-to-hyperscript'
+import h from 'virtual-dom/h.js'
 import createElement from 'virtual-dom/create-element.js'
 import diff from 'virtual-dom/diff.js'
 import patch from 'virtual-dom/patch.js'
@@ -9,7 +11,7 @@ import patterns from '../src/index.js'
 const data = document.querySelector('#demo-data')
 const seats = document.querySelector('#demo-seats')
 
-const render = () => patterns(JSON.parse(data.value), seats.checked)
+const render = () => toH(h, patterns(JSON.parse(data.value), seats.checked))
 
 let tree = render()
 let root = createElement(tree)
