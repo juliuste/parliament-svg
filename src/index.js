@@ -1,6 +1,6 @@
 'use strict'
 
-import svg from 'virtual-hyperscript-svg'
+import { s as svg } from 'hastscript'
 import roundTo from 'lodash/round.js'
 import sl from 'sainte-lague'
 

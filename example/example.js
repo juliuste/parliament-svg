@@ -1,4 +1,4 @@
-import stringify from 'virtual-dom-stringify'
+import { toHtml } from 'hast-util-to-html'
 import svgify from '../src/index.js'
 
 const germanBundestag = {
@@ -20,4 +20,4 @@ const germanBundestag = {
 	},
 }
 
-process.stdout.write(stringify(svgify(germanBundestag, true)))
+process.stdout.write(toHtml(svgify(germanBundestag, true)))
