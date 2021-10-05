@@ -16,22 +16,19 @@
 	"license": "ISC",
 	"author": "Julius Tens <mail@juliustens.eu>",
 	"files": [
-		"lib/*",
-		"dist/*"
+		"lib/*"
 	],
-	"main": "./dist/index.js",
+	"main": "./lib/index.js",
 	"module": "./lib/index.js",
 	"scripts": {
 		"build": "npm run bundle && npm run minify",
-		"bundle": "mkdir -p docs/bundle && browserify -t [ babelify --presets es2015 ] docs/index.js > docs/bundle/index.js",
-		"check-deps": "depcheck --ignores='babelify,babel-*' --ignore-dirs='dist,bundle'",
+		"bundle": "mkdir -p docs/bundle && browserify docs/index.js > docs/bundle/index.js",
+		"check-deps": "depcheck --ignore-dirs='bundle'",
 		"fix": "npm run lint -- --fix",
 		"lint": "eslint lib test",
 		"minify": "uglifyjs -mc --screw-ie8 -- docs/bundle/index.js > docs/bundle/index.min.js",
-		"prepare": "npm run transpile",
 		"prepublishOnly": "npm test",
-		"test": "npm run lint && npm run check-deps && npm run transpile && tape test/*.js",
-		"transpile": "babel lib --presets babel-preset-es2015 --out-dir dist"
+		"test": "npm run lint && npm run check-deps && tape test/*.js"
 	},
 	"dependencies": {
 		"round-precision": "^1.0.0",
@@ -39,9 +36,6 @@
 		"virtual-hyperscript-svg": "^2.0.0"
 	},
 	"devDependencies": {
-		"babel-cli": "^6.26.0",
-		"babel-preset-es2015": "^6.24.1",
-		"babelify": "^10.0.0",
 		"browserify": "^17.0.0",
 		"depcheck": "^1.4.2",
 		"eslint": "^7.32.0",
@@ -56,6 +50,6 @@
 		"virtual-dom-stringify": "^3.0.1"
 	},
 	"engines": {
-		"node": ">=8"
+		"node": ">=14"
 	}
 }
