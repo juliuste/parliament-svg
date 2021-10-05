@@ -16,16 +16,16 @@
 	"license": "ISC",
 	"author": "Julius Tens <mail@juliustens.eu>",
 	"files": [
-		"lib/*"
+		"src/*"
 	],
-	"main": "./lib/index.js",
-	"module": "./lib/index.js",
+	"main": "./src/index.js",
+	"module": "./src/index.js",
 	"scripts": {
 		"build": "npm run bundle && npm run minify",
 		"bundle": "mkdir -p docs/bundle && browserify docs/index.js > docs/bundle/index.js",
 		"check-deps": "depcheck --ignore-dirs='bundle'",
 		"fix": "npm run lint -- --fix",
-		"lint": "eslint lib test example",
+		"lint": "eslint src test example",
 		"minify": "uglifyjs -mc --screw-ie8 -- docs/bundle/index.js > docs/bundle/index.min.js",
 		"prepublishOnly": "npm test",
 		"test": "npm run lint && npm run check-deps && tape test/*.js"
