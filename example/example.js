@@ -1,5 +1,5 @@
-const stringify = require('virtual-dom-stringify')
-const svgify = require('../index')
+import stringify from 'virtual-dom-stringify'
+import svgify from '../src/index.js'
 
 const germanBundestag = {
 	linke: {

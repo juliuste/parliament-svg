@@ -1,10 +1,10 @@
 'use strict'
 
-const createElement = require('virtual-dom/create-element')
-const diff = require('virtual-dom/diff')
-const patch = require('virtual-dom/patch')
+import createElement from 'virtual-dom/create-element.js'
+import diff from 'virtual-dom/diff.js'
+import patch from 'virtual-dom/patch.js'
 
-const patterns = require('..')
+import patterns from '../src/index.js'
 
 const data = document.querySelector('#demo-data')
 const seats = document.querySelector('#demo-seats')

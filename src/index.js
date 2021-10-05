@@ -1,8 +1,8 @@
 'use strict'
 
-const svg = require('virtual-hyperscript-svg')
-const roundTo = require('lodash/round')
-const sl = require('sainte-lague')
+import svg from 'virtual-hyperscript-svg'
+import roundTo from 'lodash/round.js'
+import sl from 'sainte-lague'
 
 const pi = Math.PI
 
@@ -143,4 +143,4 @@ const generate = (parliament, seatCount) => {
 	return document
 }
 
-module.exports = generate
+export default generate

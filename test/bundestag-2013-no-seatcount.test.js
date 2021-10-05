@@ -1,10 +1,10 @@
 'use strict'
 
-const chart = require('..')
-const tape = require('tape')
-const { normalize: n } = require('./util')
+import chart from '../src/index.js'
+import tape from 'tape'
+import { normalize as n } from './util.js'
 
-const expected = require('./data/bundestag-2013-no-seatcount')
+import expected from './data/bundestag-2013-no-seatcount.js'
 
 const parliament = {
 	linke: {
