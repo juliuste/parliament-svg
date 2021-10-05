@@ -1,7 +1,7 @@
 'use strict'
 
 const svg = require('virtual-hyperscript-svg')
-const roundTo = require('round-precision')
+const roundTo = require('lodash/round')
 const sl = require('sainte-lague')
 
 const pi = Math.PI
