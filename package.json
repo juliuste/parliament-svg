@@ -43,7 +43,6 @@
 		"eslint-plugin-import": "^2.24.2",
 		"eslint-plugin-node": "^11.1.0",
 		"eslint-plugin-promise": "^5.1.0",
-		"eslint-plugin-standard": "^4.0.0",
 		"tape": "^5.3.1",
 		"uglify-js": "^3.14.2",
 		"virtual-dom": "^2.1.1",
