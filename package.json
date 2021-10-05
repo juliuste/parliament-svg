@@ -1,61 +1,61 @@
 {
-  "name": "parliament-svg",
-  "version": "2.1.4",
-  "description": "Generate parliament charts as virtual-dom SVG.",
-  "keywords": [
-    "chart",
-    "parlament",
-    "parliament",
-    "svg",
-    "wiki",
-    "wikipedia"
-  ],
-  "homepage": "https://github.com/juliuste/parliament-svg",
-  "bugs": "https://github.com/juliuste/parliament-svg/issues",
-  "repository": "juliuste/parliament-svg",
-  "license": "ISC",
-  "author": "Julius Tens <mail@juliustens.eu>",
-  "files": [
-    "lib/*",
-    "dist/*"
-  ],
-  "main": "./dist/index.js",
-  "module": "./lib/index.js",
-  "scripts": {
-    "build": "npm run bundle && npm run minify",
-    "bundle": "mkdir -p docs/bundle && browserify -t [ babelify --presets es2015 ] docs/index.js > docs/bundle/index.js",
-    "check-deps": "depcheck --ignores='babelify,babel-*' --ignore-dirs='dist,bundle'",
-    "fix": "eslint --fix lib test",
-    "lint": "eslint lib test",
-    "minify": "uglifyjs -mc --screw-ie8 -- docs/bundle/index.js > docs/bundle/index.min.js",
-    "prepare": "npm run transpile",
-    "prepublishOnly": "npm test",
-    "test": "npm run lint && npm run check-deps && npm run transpile && tape test/*.js",
-    "transpile": "babel lib --presets babel-preset-es2015 --out-dir dist"
-  },
-  "dependencies": {
-    "round-precision": "^1.0.0",
-    "sainte-lague": "^2.1.1",
-    "virtual-hyperscript-svg": "^2.0.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babelify": "^8.0.0",
-    "browserify": "^16.2.3",
-    "depcheck": "^0.9.0",
-    "eslint": "^6.0.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.17.3",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.1.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "tape": "^4.10.2",
-    "uglify-js": "^3.4.9",
-    "virtual-dom": "^2.1.1",
-    "virtual-dom-stringify": "^3.0.1"
-  },
-  "engines": {
-    "node": ">=8"
-  }
+	"name": "parliament-svg",
+	"version": "2.1.4",
+	"description": "Generate parliament charts as virtual-dom SVG.",
+	"keywords": [
+		"chart",
+		"parlament",
+		"parliament",
+		"svg",
+		"wiki",
+		"wikipedia"
+	],
+	"homepage": "https://github.com/juliuste/parliament-svg",
+	"bugs": "https://github.com/juliuste/parliament-svg/issues",
+	"repository": "juliuste/parliament-svg",
+	"license": "ISC",
+	"author": "Julius Tens <mail@juliustens.eu>",
+	"files": [
+		"lib/*",
+		"dist/*"
+	],
+	"main": "./dist/index.js",
+	"module": "./lib/index.js",
+	"scripts": {
+		"build": "npm run bundle && npm run minify",
+		"bundle": "mkdir -p docs/bundle && browserify -t [ babelify --presets es2015 ] docs/index.js > docs/bundle/index.js",
+		"check-deps": "depcheck --ignores='babelify,babel-*' --ignore-dirs='dist,bundle'",
+		"fix": "npm run lint -- --fix",
+		"lint": "eslint lib test",
+		"minify": "uglifyjs -mc --screw-ie8 -- docs/bundle/index.js > docs/bundle/index.min.js",
+		"prepare": "npm run transpile",
+		"prepublishOnly": "npm test",
+		"test": "npm run lint && npm run check-deps && npm run transpile && tape test/*.js",
+		"transpile": "babel lib --presets babel-preset-es2015 --out-dir dist"
+	},
+	"dependencies": {
+		"round-precision": "^1.0.0",
+		"sainte-lague": "^2.1.1",
+		"virtual-hyperscript-svg": "^2.0.0"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-es2015": "^6.24.1",
+		"babelify": "^10.0.0",
+		"browserify": "^17.0.0",
+		"depcheck": "^1.4.2",
+		"eslint": "^7.32.0",
+		"eslint-config-standard": "^16.0.3",
+		"eslint-plugin-import": "^2.24.2",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-promise": "^5.1.0",
+		"eslint-plugin-standard": "^4.0.0",
+		"tape": "^5.3.1",
+		"uglify-js": "^3.14.2",
+		"virtual-dom": "^2.1.1",
+		"virtual-dom-stringify": "^3.0.1"
+	},
+	"engines": {
+		"node": ">=8"
+	}
 }
