@@ -8,14 +8,18 @@ Generate parliament charts as **[virtual-dom](https://github.com/Matt-Esch/virtu
 
 ## Installation
 
+**This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c): Node 12+ is needed to use it and it must be `import`ed instead of `require`d.**
+
 ```shell
 npm install --save parliament-svg
 ```
 
 ## Usage
 
+Node that you need to
+
 ```js
-const parliamentSVG = require('parliament-svg')
+import parliamentSVG from 'parliament-svg'
 
 const svg = parliamentSVG(parties, seatCount)
 ```
@@ -53,7 +57,7 @@ For the given `parties` object and `seatCount` enabled, the rendered result shou
 If you want to convert the virtual DOM tree to HTML/SVG string, use `virtual-dom-stringify`:
 
 ```js
-const toStr = require('virtual-dom-stringify')
+import toStr from 'virtual-dom-stringify'
 const svg = toStr(svg)
 ```
 
